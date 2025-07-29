@@ -104,17 +104,24 @@ export default function Homepage() {
         <div className="hidden md:flex items-center space-x-8">
           <motion.a
             whileHover={{ scale: 1.05 }}
-            href="#features"
+            onClick={() => router.push('/features')}
             className="text-gray-600 hover:text-gray-800 transition-colors"
           >
             Features
           </motion.a>
           <motion.a
             whileHover={{ scale: 1.05 }}
-            href="#about"
+            onClick={() => router.push('/about')}
             className="text-gray-600 hover:text-gray-800 transition-colors"
           >
             About
+          </motion.a>
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            onClick={() => router.push('/help')}
+            className="text-gray-600 hover:text-gray-800 transition-colors"
+          >
+            Help
           </motion.a>
           <motion.button
             whileHover={{ scale: 1.05 }}
@@ -191,9 +198,10 @@ export default function Homepage() {
             className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
           >
             <motion.button
+            onClick={() => router.push('/app')}
               whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(236, 72, 153, 0.3)" }}
               whileTap={{ scale: 0.95 }}
-              onClick={handleSignUp}
+              
               className="bg-gradient-to-r from-pink-500 to-red-500 px-8 py-4 rounded-full text-lg font-semibold text-white flex items-center justify-center space-x-2 hover:shadow-2xl transition-all"
             >
               <span>Get Started</span>
