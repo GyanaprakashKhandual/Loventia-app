@@ -1,12 +1,12 @@
 import React from 'react'
-import Sidebar from '../components/Sidebar'
+import Sidebar from '../components/assets/Sidebar'
 
 function page() {
   return (
     <div>
-        <Sidebar/>
+      <Sidebar/>
     </div>
   )
 }
 
-export default page;
+export default page
