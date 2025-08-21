@@ -7,7 +7,7 @@ export default function AppLayout({ children }) {
       <Sidebar />
 
       {/* Content on the right */}
-      <main className="flex-1 p-6">
+      <main className="flex-1">
         {children}
       </main>
     </div>
