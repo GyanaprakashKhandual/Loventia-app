@@ -1,7 +1,8 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 import {
     ArrowRight,
     Users,
@@ -33,8 +34,9 @@ export default function LoventiaLanding() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [activeFeature, setActiveFeature] = useState(0)
     const { scrollYProgress } = useScroll()
-    const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '50%'])
-
+    const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
+    const router = useRouter();
+    
     const features = [
         {
             icon: <Users className="w-8 h-8" />,
@@ -120,7 +122,9 @@ export default function LoventiaLanding() {
                         <div className="hidden md:flex items-center space-x-8">
                             <a href="#features" className="text-gray-700 hover:text-purple-600 transition-colors">Blogs</a>
                             <a href="#how-it-works" className="text-gray-700 hover:text-purple-600 transition-colors">How it Works</a>
-                            <a href="#testimonials" className="text-gray-700 hover:text-purple-600 transition-colors">Sign In</a>
+                            <a
+                            onClick={() => router.push('/authentication')}
+                             className="text-gray-700 hover:text-purple-600 transition-colors cursor-pointer">Sign In</a>
                             <a href="#pricing" className="text-gray-700 hover:text-purple-600 transition-colors">Help</a>
                             <motion.button
                                 className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-lg hover:shadow-lg transition-all duration-200"
